@@ -31,6 +31,7 @@ Minimum Ansible Version: 2.4
 | Debian 9      | yes | yes | yes  | yes  | yes  |
 | Ubuntu 14.04  | yes | yes | yes  |  -   |  -   |
 | Ubuntu 16.04  | yes | yes | yes  | yes  |  -   |
+| Ubuntu 18.10  |  -  |  -  |  -   |  -   | yes  |
 
 ## Example (Playbook)
 
@@ -204,35 +205,17 @@ We just set the relevant options to tell Ansible the files to use with the
 
 See the [defaults/main.yml](defaults/main.yml) file.
 
-## Bug Tracker
-
-Bugs are tracked on [GitHub Issues](
-https://github.com/OCA/ansible-odoo/issues).  In case of trouble, please
-check there if your issue has already been reported. If you spotted it first,
-help us smash it by providing detailed and welcomed feedback.
-
-## Credits
-
 ### Contributors
 
 * Sébastien Alix
 * Jordi Ballester Alomar
+* Mauro Rosero
 
 Do not contact contributors directly about support or help with technical issues.
 
+This original module is maintained by the OCA.
 
-### Maintainer
-
-[![Odoo Community Association](
-https://odoo-community.org/logo.png)](https://odoo-community.org)
-
-This module is maintained by the OCA.
-
-OCA, or the Odoo Community Association, is a nonprofit organization whose
-mission is to support the collaborative development of Odoo features and
-promote its widespread use.
-
-To contribute to this module, please visit https://odoo-community.org.
+OCA, or the Odoo Community Association, is a nonprofit organization whose mission is to support the collaborative development of Odoo features and promote its widespread use.
 
 ## Licence
 
