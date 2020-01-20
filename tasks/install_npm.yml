@@ -1,0 +1,35 @@
+---
+
+
+- name: Configure NodeJS APT repository signing key
+  apt_key:
+    url: "{{ item.url }}"
+    state: "{{ item.state }}"
+  with_items: "{{ odoo_nodejs_apt_keys | default([]) }}"
+  when: odoo_version|int < 13
+
+- name: Configure NodeJS APT repository
+  apt_repository:
+    repo: "{{ item.repo }}"
+    state: "{{ item.state }}"
+  with_items: "{{ odoo_nodejs_apt_repositories | default([]) }}"
+  when: odoo_version|int < 13
+
+- name: Install NodeJS
+  apt:  pkg="{{ odoo_nodejs_apt_package }}"
+        state=present
+        update_cache=yes
+  when: odoo_version|int < 13
+
+- name: Install Odoo dependencies (npm)
+  npm:  name={{ item.name }}
+        version={{ item.version }}
+        global=yes
+  with_items: "{{ odoo_npm_packages | default([]) }}"
+  when: odoo_version|int < 13
+
+- name: Install Odoo dependencies (npm)
+  npm:  name={{ item.name }}
+        global=yes
+  with_items: "{{ odoo_npm_packages | default([]) }}"
+  when: odoo_version|int > 12
