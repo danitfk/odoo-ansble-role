@@ -21,17 +21,17 @@ virtual environment. The configuration part is also managed by Buildout
 (`odoo_config_*` options are not used excepting the `odoo_config_db_*` ones
 for PostgreSQL related tasks).
 
-Minimum Ansible Version: 2.4
+Minimum Ansible Version: 2.8
 
 ## Supported versions and systems
 
-| System / Odoo | 8.0 | 9.0 | 10.0 | 11.0 | 12.0 |
-|---------------|-----|-----|------|------|------|
-| Debian 8      | yes | yes | yes  |  -   |  -   |
-| Debian 9      | yes | yes | yes  | yes  | yes  |
-| Ubuntu 14.04  | yes | yes | yes  |  -   |  -   |
-| Ubuntu 16.04  | yes | yes | yes  | yes  |  -   |
-| Ubuntu 18.10  |  -  |  -  |  -   |  -   | yes  |
+| System / Odoo | 8.0 | 9.0 | 10.0 | 11.0 | 12.0 | 13.0 |
+|---------------|-----|-----|------|------|------|------|
+| Debian 8      | yes | yes | yes  |  -   |  -   |  -   |
+| Debian 9      | yes | yes | yes  | yes  | yes  |  -   |
+| Ubuntu 14.04  | yes | yes | yes  |  -   |  -   |  -   |
+| Ubuntu 16.04  | yes | yes | yes  | yes  |  -   |  -   |
+| Ubuntu 18.10  |  -  |  -  |  -   |  -   | yes  | yes  |
 
 ## Example (Playbook)
 
