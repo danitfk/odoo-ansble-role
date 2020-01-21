@@ -5,9 +5,9 @@
     odoo_postgresql_delegate_to: "{{ inventory_hostname if (odoo_config_db_host|bool) == true else odoo_config_db_host }}"
     odoo_postgresql_remote_user: "{{ odoo_config_db_host_user if ((odoo_config_db_host|bool) != False) else ansible_user }}"
 
-- debug: var=odoo_postgresql_delegate_to
-- debug: var=odoo_postgresql_remote_user
-- debug: var=odoo_config_db_host
+#- debug: var=odoo_postgresql_delegate_to
+#- debug: var=odoo_postgresql_remote_user
+#- debug: var=odoo_config_db_host
 
 - block:
 

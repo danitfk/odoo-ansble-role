@@ -15,6 +15,13 @@
   tags:
     - odoo_packages
 
+- name: Install Odoo Requirements (PyPi)
+  pip:
+   requirements: "{{ odoo_requirements }}"
+  when: odoo_version | int > 11
+  tags:
+    - odoo_packages
+
 - import_tasks: config.yml
   tags:
     - odoo_config
