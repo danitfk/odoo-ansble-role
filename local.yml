@@ -1,0 +1,12 @@
+---
+- name: "Install odoo on localhost"
+  hosts: localhost
+  connection: local
+  become: yes
+  roles:
+  - ../odoo-ansible-role
+      odoo_version: 12.0
+      odoo_config_admin_passwd: SuPerPassWorD
+      odoo_config_db_host: pg_server
+      odoo_config_db_user: odoo
+      odoo_config_db_passwd: PaSsWoRd

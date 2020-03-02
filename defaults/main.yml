@@ -1,4 +1,5 @@
-ansible_ssh_pipelining: true
+# Enable if it's not in "local" mode.
+# ansible_ssh_pipelining: true
 
 odoo_install_type: standard     # standard, buildout
 odoo_version: 12.0
