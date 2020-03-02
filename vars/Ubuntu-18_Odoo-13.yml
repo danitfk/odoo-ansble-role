@@ -6,6 +6,7 @@ odoo_debian_packages:
     - python3-openssl
     - python3-markupsafe
     # Required by pyldap
+    - libsass0
     - libldap2-dev
     - libsasl2-dev
     # Dependencies taken from the deb package
@@ -29,7 +30,7 @@ odoo_debian_packages:
     - python3-pydot
     - python3-pyparsing
     - python3-pypdf2
-    # python3-qrcode  # Not available in Ubuntu 16.04
+    - python3-qrcode
     - python3-reportlab
     - python3-requests
     - python3-serial
@@ -40,6 +41,10 @@ odoo_debian_packages:
     - python3-werkzeug
     - python3-xlsxwriter
     - python3-yaml
+    - python3-setuptools
+    - python3-pip
+    - python3-libsass
+    - python3-xlrd
 
 odoo_pypi_packages:
     - psycogreen
