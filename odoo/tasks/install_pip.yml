@@ -18,12 +18,12 @@
   args:
     creates: "{{ odoo_pip_venv_path }}"
 
-- name: Download the pip requirements file
+- name: Import pip requirements files
   become: yes
   become_user: "{{ odoo_user }}"
-  get_url: url="{{ odoo_pip_requirements_url }}"
-           force=yes
-           dest="/home/{{ odoo_user }}/requirements.txt"
+  copy:
+    src: "files/requirements_Ubuntu-18_Odoo-12.txt" 
+    dest: "/home/{{ odoo_user }}/requirements.txt"
 
 - name: Install Odoo dependencies (PyPi)
   become: yes

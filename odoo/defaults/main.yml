@@ -20,9 +20,9 @@ odoo_rootdir: "{{ odoo_install_type == 'buildout' and '/home/'+odoo_user+'/odoo/
 
 # Project repository to deploy
 odoo_repo_type: git     # git or hg
-odoo_repo_url: "{{ odoo_install_type == 'buildout' and 'https://github.com/danitfk/odoo.git' }}"
+odoo_repo_url: "{{ odoo_install_type == 'buildout' and 'https://github.com/osiell/odoo-buildout-example.git' or 'https://github.com/odoo/odoo.git' }}"
 odoo_repo_dest: "{{ odoo_install_type == 'buildout' and odoo_workdir or odoo_rootdir }}"
-odoo_requirements: "{{ odoo_repo_dest }}/requirements.txt"
+odoo_requirements: "{{ odoo_repo_dest }}/server/requirements.txt"
 odoo_repo_rev: "{{ odoo_version }}"
 odoo_repo_update: True  # Update the working copy or not. This option is
                         # ignored on the first run (a checkout of the working
@@ -109,7 +109,7 @@ odoo_config_custom: {}
 
 # Pip installation options (odoo_install_type == 'pip')
 odoo_pip_venv_path: "{{ odoo_workdir }}/sandbox"
-odoo_pip_requirements_url: "file:///home/{{ odoo_user }}/requirements.txt"
+odoo_pip_requirements_url: # default: "file:///home/{{ odoo_user }}/requirements.txt"
 odoo_pip_odoo_bin_path: "{{ odoo_pip_venv_path }}/bin/{{ (odoo_version | int) < 10 and 'odoo.py' or 'odoo' }}"
 
 # Buildout installation options (odoo_install_type == 'buildout')
