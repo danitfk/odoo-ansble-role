@@ -8,6 +8,13 @@
   tags:
     - odoo_required_tools
 
+- name: Install required packages to work with pip
+  apt:  pkg={{ odoo_pip_build_dependencies }}
+        state=present
+        update_cache={{ odoo_apt_update_cache }}
+        cache_valid_time={{ odoo_apt_cache_valid_time }}
+  tags: odoo_required_tools
+
 - name: Add Odoo system user
   user:
     name: "{{ odoo_user }}"
