@@ -1,6 +1,7 @@
 ---
 
 odoo_debian_packages:
+    - gcc
     - npm
     - python3-dev
     - python3-openssl
@@ -45,6 +46,7 @@ odoo_debian_packages:
     - python3-pip
     - python3-libsass
     - python3-xlrd
+    - python3-ldap
 
 odoo_pypi_packages:
     - psycogreen
