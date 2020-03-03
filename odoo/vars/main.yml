@@ -1,5 +1,6 @@
 ---
 ansible_python_interpreter: /usr/bin/python3
+ansible_ssh_pipelining: yes # disable for local mode
 odoo_apt_update_cache: yes
 odoo_apt_cache_valid_time: 86400
 

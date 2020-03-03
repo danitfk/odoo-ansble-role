@@ -14,6 +14,13 @@
   tags:
     - odoo_packages
 
+- name: Import pip requirements files
+  become: yes
+  become_user: "{{ odoo_user }}"
+  copy:
+    src: "files/requirements_Ubuntu-18_Odoo-12.txt" 
+    dest: "/home/{{ odoo_user }}/odoo/server/requirements.txt"
+
 - name: Install Odoo Requirements (PyPi)
   pip:
    requirements: "{{ odoo_requirements }}"

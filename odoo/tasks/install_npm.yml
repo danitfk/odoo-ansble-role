@@ -1,25 +1,19 @@
 ---
 
+- name: Download nodeJS Script
+  get_url:
+    url: https://deb.nodesource.com/setup_10.x
+    dest: /tmp/node10.sh
+    mode: 0755
 
-- name: Configure NodeJS APT repository signing key
-  apt_key:
-    url: "{{ item.url }}"
-    state: "{{ item.state }}"
-  with_items: "{{ odoo_nodejs_apt_keys | default([]) }}"
-  when: odoo_version|int < 13
-
-- name: Configure NodeJS APT repository
-  apt_repository:
-    repo: "{{ item.repo }}"
-    state: "{{ item.state }}"
-  with_items: "{{ odoo_nodejs_apt_repositories | default([]) }}"
-  when: odoo_version|int < 13
-
-- name: Install NodeJS
-  apt:  pkg="{{ odoo_nodejs_apt_package }}"
-        state=present
-        update_cache=yes
-  when: odoo_version|int < 13
+- name: Add NodeJS repository
+  command: bash /tmp/node10.sh
+  
+- name: Make sure NPM and NodeJS installed
+  apt: 
+    pkg:
+      - nodejs
+    state: present
 
 - name: Install Odoo dependencies (npm)
   npm:  name={{ item.name }}

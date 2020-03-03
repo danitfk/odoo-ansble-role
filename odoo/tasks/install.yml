@@ -93,10 +93,3 @@
   when: odoo_install_type == 'pip'
   tags:
     - odoo_install_type_pip
-
-- name: Install NPM packages
-  import_tasks: install_npm.yml
-  when: (odoo_version | int) >= 9
-  tags:
-    - odoo
-    - odoo_packages
