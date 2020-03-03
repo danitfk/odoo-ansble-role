@@ -1,0 +1,12 @@
+---
+- name: Install odoo
+  hosts: odoo
+  become: yes
+  remote_user: root
+  roles:
+  - role: odoo
+    odoo_version: 12.0
+    odoo_config_db_host: False
+    odoo_config_admin_passwd: SuPerPassWorD
+  environment:
+    LC_ALL: en_US.UTF-8

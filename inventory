@@ -1,0 +1,2 @@
+[odoo]
+116.203.80.16 ansible_ssh_user="root"
